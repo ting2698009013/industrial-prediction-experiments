@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local data, outputs, and model artifacts
+data/
+output/
+outputs/
+runs/
+reports/
+checkpoints/
+models/
+artifacts/
+*.pt
+*.pth
+*.ckpt
+*.joblib
+*.pkl
+*.onnx
+*.npy
+*.npz
+
+# Keep the small feature-selection configuration tracked
+!configs/selected_feature_indices.npy
+!ml_baseline/configs/selected_feature_indices.npy
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
