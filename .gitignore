@@ -25,6 +25,7 @@ reports/
 checkpoints/
 models/
 artifacts/
+demo-results.json
 *.pt
 *.pth
 *.ckpt

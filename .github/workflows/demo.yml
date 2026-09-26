@@ -1,0 +1,24 @@
+name: synthetic-demo
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-demo.txt
+      - name: Install demo dependencies
+        run: python -m pip install -r requirements-demo.txt
+      - name: Run synthetic benchmark
+        run: python demo/synthetic_benchmark.py --quick --output demo-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-metrics
+          path: demo-results.json
